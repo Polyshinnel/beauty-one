@@ -4,6 +4,7 @@
 namespace App\Pages;
 
 
+use App\Repository\UserRepository;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
 use Slim\Psr7\Factory\StreamFactory;
@@ -12,6 +13,13 @@ use Slim\Psr7\Response;
 
 class AuthPage
 {
+    private $userRepository;
+
+    public function __construct(UserRepository $userRepository)
+    {
+        $this->userRepository = $userRepository;
+    }
+
     public function get(ServerRequestInterface $request, ResponseInterface $response): ResponseInterface
     {
         $params = $request->getQueryParams();
@@ -26,6 +34,15 @@ class AuthPage
         }
         $json['code'] = $this->createCode($type);
         $data = json_encode($json,JSON_UNESCAPED_UNICODE);
+
+        $createArr = [
+            'userId' => $userId,
+            'code' => $json['code'],
+            'token' => ''
+        ];
+
+        $this->userRepository->createUser($createArr);
+
         return new Response(
             200,
             new Headers(['Content-Type' => 'text/html']),
