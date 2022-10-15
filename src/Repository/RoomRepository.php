@@ -20,7 +20,12 @@ class RoomRepository
     public function getRoomById($id) : array {
         return $this->roomModel::Select(
             'rooms.short',
-            'rooms.img as room_preview',
+            'rooms.img_big as room_preview',
+            'rooms.address',
+            'rooms.price1',
+            'rooms.price2',
+            'rooms.price3',
+            'rooms.status',
             'rooms_adds_type.name as adds_name',
             'room_adds.value'
         )

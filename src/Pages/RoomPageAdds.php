@@ -29,6 +29,11 @@ class RoomPageAdds
 
         $json['name'] = $results[0]['short'];
         $json['preview'] = $results[0]['room_preview'];
+        $json['address'] = $results[0]['address'];
+        $json['price1'] = $results[0]['price1'];
+        $json['price2'] = $results[0]['price2'];
+        $json['price3'] = $results[0]['price3'];
+        $json['status'] = $results[0]['status'];
 
         $equipment = [];
         $supply = [];
