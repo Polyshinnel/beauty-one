@@ -79,9 +79,11 @@ class AuthPage
         $params = $request->getParsedBody();
 
         $userId = $params['userId'];
+        $code = $params['code'];
 
         $filter = [
-            'userId' => $userId
+            'userId' => $userId,
+            'code' => $code
         ];
 
         $updateData = [
