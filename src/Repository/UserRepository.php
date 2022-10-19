@@ -18,4 +18,12 @@ class UserRepository
     public function createUser($createArr) {
         $this->userModel::create($createArr);
     }
+
+    public function getFilteredUser($filter) {
+        return $this->userModel->where($filter)->get()->toArray();
+    }
+
+    public function updateUserData($filter,$updateData) {
+        $this->userModel->where($filter)->update($updateData);
+    }
 }

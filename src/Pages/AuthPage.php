@@ -25,23 +25,112 @@ class AuthPage
         $params = $request->getQueryParams();
         $userId = $params['userId'];
         $json = [
-            'error' => 'none'
+            'error' => 'none',
+            'code' => ''
         ];
         $type = $this->checkUserId($userId);
         $json['type'] = $type;
+
         if($type == 'undefined'){
             $json['error'] = 'Не получилось распознать почту или телефон';
         }
-        $json['code'] = $this->createCode($type);
+
+        if($json['error'] == 'none') {
+            $json['code'] = $this->createCode($type);
+
+
+            $createArr = [
+                'userId' => $userId,
+                'code' => $json['code'],
+                'token' => ''
+            ];
+
+            $filter = [
+                'userId' => $userId
+            ];
+
+            $checkIssetUser = $this->userRepository->getFilteredUser($filter);
+
+            if(empty($checkIssetUser)){
+                $this->userRepository->createUser($createArr);
+            }
+            else
+            {
+                $updateData = [
+                    'code' => $json['code']
+                ];
+                $this->userRepository->updateUserData($filter,$updateData);
+            }
+
+        }
+
         $data = json_encode($json,JSON_UNESCAPED_UNICODE);
 
-        $createArr = [
-            'userId' => $userId,
-            'code' => $json['code'],
-            'token' => ''
+        return new Response(
+            200,
+            new Headers(['Content-Type' => 'text/html']),
+            (new StreamFactory())->createStream($data)
+        );
+    }
+
+    public function createToken(ServerRequestInterface $request, ResponseInterface $response): ResponseInterface {
+
+        $token = $this->generateToken();
+        $params = $request->getParsedBody();
+
+        $userId = $params['userId'];
+
+        $filter = [
+            'userId' => $userId
         ];
 
-        $this->userRepository->createUser($createArr);
+        $updateData = [
+            'token' => $token
+        ];
+
+        $this->userRepository->updateUserData($filter,$updateData);
+
+        $json = [
+            'userId' => $userId,
+            'token' => $token
+        ];
+
+        $data = json_encode($json,JSON_UNESCAPED_UNICODE);
+
+        return new Response(
+            200,
+            new Headers(['Content-Type' => 'text/html']),
+            (new StreamFactory())->createStream($data)
+        );
+    }
+
+    public function checkToken(ServerRequestInterface $request, ResponseInterface $response): ResponseInterface {
+        $params = $request->getParsedBody();
+        $token = $params['token'];
+
+        $filter = [
+            'token' => $token
+        ];
+
+        $checkUserByToken = $this->userRepository->getFilteredUser($filter);
+
+
+
+        if(empty($checkUserByToken)){
+            $json = [
+                'userId' => 'none',
+                'message' => 'err token'
+            ];
+        }
+        else
+        {
+            $json = [
+                'userId' => $checkUserByToken[0]['userId'],
+                'message' => 'err token'
+            ];
+        }
+
+        $data = json_encode($json,JSON_UNESCAPED_UNICODE);
 
         return new Response(
             200,
@@ -80,5 +169,24 @@ class AuthPage
             $code = $this->createDigitsCode(4);
         }
         return $code;
+    }
+
+    private function generateToken()
+    {
+        if (function_exists('com_create_guid') === true) {
+            return trim(com_create_guid(), '{}');
+        }
+
+        return sprintf(
+            '%04X%04X-%04X-%04X-%04X-%04X%04X%04X',
+            mt_rand(0, 65535),
+            mt_rand(0, 65535),
+            mt_rand(0, 65535),
+            mt_rand(16384, 20479),
+            mt_rand(32768, 49151),
+            mt_rand(0, 65535),
+            mt_rand(0, 65535),
+            mt_rand(0, 65535)
+        );
     }
 }
