@@ -73,7 +73,7 @@ class AuthPage
         );
     }
 
-    public function createToken(ServerRequestInterface $request, ResponseInterface $response): ResponseInterface {
+    public function createToken(ServerRequestInterface $request): ResponseInterface {
 
         $token = $this->generateToken();
         $params = $request->getParsedBody();
@@ -106,7 +106,7 @@ class AuthPage
         );
     }
 
-    public function checkToken(ServerRequestInterface $request, ResponseInterface $response): ResponseInterface {
+    public function checkToken(ServerRequestInterface $request): ResponseInterface {
         $params = $request->getParsedBody();
         $token = $params['token'];
 
