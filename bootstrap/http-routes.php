@@ -11,9 +11,9 @@ return static function (App $app): void {
     $app->group('/',function (RouteCollectorProxy $group) {
         $group->get('',[IndexPage::class,'get']);
         $group->get('getAuth',[AuthPage::class,'get']);
-        $group->post('getToken',[AuthPage::class,'createToken']);
-        $group->post('checkToken',[AuthPage::class,'checkToken']);
         $group->get('getListRooms',[RoomPage::class,'get']);
         $group->get('getRoomProp/{id}',[RoomPageAdds::class,'get']);
     });
+    $app->post('/getToken',[AuthPage::class,'createToken']);
+    $app->post('/checkToken',[AuthPage::class,'checkToken']);
 };
