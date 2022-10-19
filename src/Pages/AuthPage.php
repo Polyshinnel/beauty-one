@@ -128,7 +128,7 @@ class AuthPage
         {
             $json = [
                 'userId' => $checkUserByToken[0]['userId'],
-                'message' => 'err token'
+                'message' => 'token ok'
             ];
         }
 
