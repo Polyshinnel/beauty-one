@@ -17,14 +17,15 @@ class RoomRepository
         return $this->roomModel->all()->toArray();
     }
 
+    public function getRoomListByLocationId($id) : array {
+        return $this->roomModel->where('location_id',$id)->get()->toArray();
+    }
+
     public function getRoomById($id) : array {
         return $this->roomModel::Select(
             'rooms.short',
             'rooms.img_big as room_preview',
             'rooms.address',
-            'rooms.price1',
-            'rooms.price2',
-            'rooms.price3',
             'rooms.status',
             'rooms_adds_type.name as adds_name',
             'room_adds.value'

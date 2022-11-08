@@ -4,7 +4,7 @@
 namespace App\Pages;
 
 
-use App\Repository\RoomRepository;
+use App\Controllers\RoomController;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
 use Slim\Psr7\Factory\StreamFactory;
@@ -13,57 +13,20 @@ use Slim\Psr7\Response;
 
 class RoomPageAdds
 {
-    private $roomRepository;
+    private $roomController;
 
-    public function __construct(RoomRepository $roomRepository)
+    public function __construct(RoomController $roomController)
     {
-        $this->roomRepository = $roomRepository;
+        $this->roomController = $roomController;
     }
 
     public function get(ServerRequestInterface $request, ResponseInterface $response, array $args): ResponseInterface
     {
         $id = $args['id'];
-        $results = $this->roomRepository->getRoomById($id);
 
-        $json = [];
+        $result = $this->roomController->getRoomAds($id);
 
-        $json['name'] = $results[0]['short'];
-        $json['preview'] = $results[0]['room_preview'];
-        $json['address'] = $results[0]['address'];
-        $json['price1'] = $results[0]['price1'];
-        $json['price2'] = $results[0]['price2'];
-        $json['price3'] = $results[0]['price3'];
-        $json['status'] = $results[0]['status'];
-
-        $equipment = [];
-        $supply = [];
-        $common = [];
-        $gallery = [];
-
-        foreach ($results as $result){
-            if($result['adds_name'] == 'equipment') {
-                $equipment[] = $result['value'];
-            }
-
-            if($result['adds_name'] == 'supply') {
-                $supply[] = $result['value'];
-            }
-
-            if($result['adds_name'] == 'common') {
-                $common[] = $result['value'];
-            }
-
-            if($result['adds_name'] == 'image') {
-                $gallery[] = $result['value'];
-            }
-        }
-
-        $json['equipment'] = $equipment;
-        $json['supply'] = $supply;
-        $json['common'] = $common;
-        $json['gallery'] = $gallery;
-
-        $json = json_encode($json,JSON_UNESCAPED_UNICODE);
+        $json = json_encode($result,JSON_UNESCAPED_UNICODE);
 
         return new Response(
             200,

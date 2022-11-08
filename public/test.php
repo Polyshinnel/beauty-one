@@ -1,9 +1,11 @@
 <?php
 
-$urlrest = 'http://beauty.deploy-server.ru/checkToken';
+$urlrest = 'http://beauty-one.web/checkBooking';
 
 $data = array(
-    'token' => '1B65D4CE-729F-4E0F-839F-1E04C24C4DCC',
+    'seat_id' => '1',
+    'date_start' => '2022-11-02 09:00:00',
+    'date_end' => '2022-11-02 19:00:00',
 );
 
 $ch = curl_init($urlrest);

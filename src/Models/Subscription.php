@@ -6,18 +6,16 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Room extends Model
+class Subscription extends Model
 {
-    protected $table = 'rooms';
+    protected $table = 'subscriptions';
 
     protected $fillable = [
         'id',
+        'time_val',
+        'tariff_id',
         'location_id',
-        'name',
-        'short',
-        'description',
-        'img',
-        'status'
+        'available_days'
     ];
 
     public $timestamps = false;
