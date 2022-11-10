@@ -14,4 +14,8 @@ class OrderDetailsRepository
     {
         $this->orderDetailsModel = $orderDetailsModel;
     }
+
+    public function createOrderDetail(array $createArr) : void {
+        $this->orderDetailsModel::create($createArr);
+    }
 }

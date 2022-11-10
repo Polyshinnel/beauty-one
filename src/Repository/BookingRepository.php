@@ -29,4 +29,12 @@ class BookingRepository
             ->get()
             ->toArray();
     }
+
+    public function getLastSortedBooking(String $column,String $sort) : array {
+        return $this->bookingModel->orderBy($column,$sort)->paginate(1,['*'],'page',1)->toArray();
+    }
+
+    public function createBooking(array $createArr) : void {
+        $this->bookingModel::create($createArr);
+    }
 }

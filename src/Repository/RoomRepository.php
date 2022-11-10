@@ -21,6 +21,10 @@ class RoomRepository
         return $this->roomModel->where('location_id',$id)->get()->toArray();
     }
 
+    public function getShortRoomById($id) {
+        return $this->roomModel->where('id',$id)->first()->toArray();
+    }
+
     public function getRoomById($id) : array {
         return $this->roomModel::Select(
             'rooms.short',

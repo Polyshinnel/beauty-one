@@ -10,7 +10,7 @@ final class UserTransactions extends Migration
         $this->schema->create('user_transactions',function (Blueprint $table) {
             $table->increments('id');
             $table->integer('user_id');
-            $table->integer('unique_transaction_id');
+            $table->string('unique_transaction_id',32);
             $table->integer('money_cost');
             $table->integer('chargeback_money_status');
             $table->dateTime('date_start');

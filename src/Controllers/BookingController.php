@@ -79,4 +79,6 @@ class BookingController
     public function getAllBookingsSeat($seatId) {
         return $this->bookingRepository->getAllBookingsSeat($seatId);
     }
+
+
 }

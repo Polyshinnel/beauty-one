@@ -1,11 +1,12 @@
 <?php
 
-$urlrest = 'http://beauty-one.web/checkBooking';
+$urlrest = 'http://beauty-one.web/checkoutSeat';
 
 $data = array(
     'seat_id' => '1',
-    'date_start' => '2022-11-02 09:00:00',
-    'date_end' => '2022-11-02 19:00:00',
+    'time_start' => '2022-11-02 17:00:00',
+    'minutes' => '210',
+    'token' => '',
 );
 
 $ch = curl_init($urlrest);

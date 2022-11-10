@@ -5,6 +5,7 @@ namespace App\Pages;
 
 
 use App\Controllers\BookingController;
+use App\Controllers\HelperController;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
 use Slim\Psr7\Factory\StreamFactory;
@@ -14,10 +15,12 @@ use Slim\Psr7\Response;
 class BookingsPage
 {
     private $bookingController;
+    private $helperController;
 
-    public function __construct(BookingController $bookingController)
+    public function __construct(BookingController $bookingController,HelperController $helperController)
     {
         $this->bookingController = $bookingController;
+        $this->helperController = $helperController;
     }
 
 
@@ -38,7 +41,9 @@ class BookingsPage
         $params = $request->getParsedBody();
         $seatId = $params['seat_id'];
         $dateStart = $params['date_start'];
-        $dateEnd = $params['date_end'];
+        $minutes = $params['minutes'];
+        $dateEnd = $this->helperController->convertTimeToDate($dateStart,$minutes);
+        print_r($dateEnd);
         $checkResult = $this->bookingController->checkBooking($seatId,$dateStart,$dateEnd);
 
         $json['answer'] = 'false';

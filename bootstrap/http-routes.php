@@ -1,7 +1,9 @@
 <?php
 
 use App\Pages\AuthPage;
+use App\Pages\BookingProcessingPage;
 use App\Pages\BookingsPage;
+use App\Pages\CheckoutSeatPage;
 use App\Pages\IndexPage;
 use App\Pages\LocationPage;
 use App\Pages\RoomPage;
@@ -21,4 +23,6 @@ return static function (App $app): void {
     $app->post('/getToken',[AuthPage::class,'createToken']);
     $app->post('/checkToken',[AuthPage::class,'checkToken']);
     $app->post('/checkBooking',[BookingsPage::class,'checkBooking']);
+    $app->post('/checkoutSeat',[CheckoutSeatPage::class,'get']);
+    $app->post('/bookingProcessing',[BookingProcessingPage::class,'get']);
 };

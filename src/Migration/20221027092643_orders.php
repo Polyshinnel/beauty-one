@@ -10,7 +10,7 @@ final class Orders extends Migration
         $this->schema->create('orders',function (Blueprint $table) {
             $table->increments('id');
             $table->integer('user_id');
-            $table->string('transaction_id',18);
+            $table->string('transaction_id',32);
             $table->integer('status_order');
             $table->integer('order_total_time');
             $table->integer('order_total_money');
