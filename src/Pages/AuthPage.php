@@ -5,7 +5,6 @@ namespace App\Pages;
 
 
 use App\Controllers\AuthController;
-use App\Repository\UserRepository;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
 use Slim\Psr7\Factory\StreamFactory;
@@ -15,7 +14,6 @@ use Slim\Psr7\Response;
 class AuthPage
 {
     private $authController;
-    private $mailer;
 
     public function __construct(AuthController $authController)
     {

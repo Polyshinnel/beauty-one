@@ -9,12 +9,10 @@ use App\Repository\UserRepository;
 class AuthController
 {
     private $userRepository;
-    private $mailer;
 
-    public function __construct(UserRepository $userRepository, MailerClass $mailer)
+    public function __construct(UserRepository $userRepository)
     {
         $this->userRepository = $userRepository;
-        $this->mailer = $mailer;
     }
 
     public function authUser($userId) {
@@ -44,15 +42,6 @@ class AuthController
             ];
 
             $checkIssetUser = $this->userRepository->getFilteredUser($filter);
-
-//            if($type == 'mail') {
-//                $address = $userId;
-//                $mailArr = [
-//                    'subject' => 'Код авторизации для Beauty One',
-//                    'body' => "Ваш код авторизации: /r/n <h1>".$json['code']."</h1>"
-//                ];
-//                $this->mailer->sendMail($address,$mailArr);
-//            }
 
             if(empty($checkIssetUser)){
                 $this->userRepository->createUser($createArr);
