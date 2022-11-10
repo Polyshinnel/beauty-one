@@ -29,5 +29,12 @@ return [
             'cache_dir' => __DIR__ . '/../tmp/cache/twig',
             'extensions' => [],
         ],
+        'mail' => [
+            'mail_name' => '',
+            'mail_pass' => '',
+            'hostname' => '',
+            'port' => '',
+            'notifyName' => 'Служба уведомлений',
+        ]
     ]
 ];
