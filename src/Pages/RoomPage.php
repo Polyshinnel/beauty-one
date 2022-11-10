@@ -24,7 +24,8 @@ class RoomPage
     {
         $locationId = $args['id'];
         $rooms = $this->roomListController->getRoomList($locationId);
-        $json = json_encode($rooms,JSON_UNESCAPED_UNICODE);
+        $json['rooms'] = $rooms;
+        $json = json_encode($json,JSON_UNESCAPED_UNICODE);
 
         return new Response(
             200,

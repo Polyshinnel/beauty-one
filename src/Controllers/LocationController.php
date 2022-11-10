@@ -16,7 +16,8 @@ class LocationController
     }
 
     public function getListLocation() {
-        return $this->locationRepository->getAllLocations();
+        $data['locations'] = $this->locationRepository->getAllLocations();
+        return $data;
     }
 
     public function getListLocationByRange($params) {
@@ -52,8 +53,12 @@ class LocationController
 
         }
 
+
+
         uasort($locationArr,array('App\Controllers\LocationController','sortDistanceFunction'));
-        return $locationArr;
+
+        $data['locations'] = $locationArr;
+        return $data;
     }
 
     private function getRangeCoords($lat1,$long1,$lat2,$long2) {
