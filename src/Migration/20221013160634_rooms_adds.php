@@ -448,247 +448,247 @@ final class RoomsAdds extends Migration
             [
                 'room_id' => 1,
                 'adds_type_id' => 4,
-                'value' => '/assets/images/room1/1.jpg'
+                'value' => '/assets/images/rooms/vivaldi/rooms/vivaldi/room1/1.jpg'
             ],
             [
                 'room_id' => 1,
                 'adds_type_id' => 4,
-                'value' => '/assets/images/room1/2.jpg'
+                'value' => '/assets/images/rooms/vivaldi/rooms/vivaldi/room1/2.jpg'
             ],
             [
                 'room_id' => 1,
                 'adds_type_id' => 4,
-                'value' => '/assets/images/room1/3.jpg'
+                'value' => '/assets/images/rooms/vivaldi/room1/3.jpg'
             ],
             [
                 'room_id' => 1,
                 'adds_type_id' => 4,
-                'value' => '/assets/images/room1/4.jpg'
+                'value' => '/assets/images/rooms/vivaldi/room1/4.jpg'
             ],
             [
                 'room_id' => 1,
                 'adds_type_id' => 4,
-                'value' => '/assets/images/room1/5.jpg'
+                'value' => '/assets/images/rooms/vivaldi/room1/5.jpg'
             ],
             [
                 'room_id' => 1,
                 'adds_type_id' => 4,
-                'value' => '/assets/images/room1/6.jpg'
+                'value' => '/assets/images/rooms/vivaldi/room1/6.jpg'
             ],
             [
                 'room_id' => 1,
                 'adds_type_id' => 4,
-                'value' => '/assets/images/room1/7.jpg'
+                'value' => '/assets/images/rooms/vivaldi/room1/7.jpg'
             ],
             [
                 'room_id' => 1,
                 'adds_type_id' => 4,
-                'value' => '/assets/images/room1/8.jpg'
+                'value' => '/assets/images/rooms/vivaldi/room1/8.jpg'
             ],
             [
                 'room_id' => 1,
                 'adds_type_id' => 4,
-                'value' => '/assets/images/room1/9.jpg'
+                'value' => '/assets/images/rooms/vivaldi/room1/9.jpg'
             ],
             [
                 'room_id' => 1,
                 'adds_type_id' => 4,
-                'value' => '/assets/images/room1/10.jpg'
+                'value' => '/assets/images/rooms/vivaldi/room1/10.jpg'
             ],
 
 
             [
                 'room_id' => 2,
                 'adds_type_id' => 4,
-                'value' => '/assets/images/room2/1.jpg'
+                'value' => '/assets/images/rooms/vivaldi/room2/1.jpg'
             ],
             [
                 'room_id' => 2,
                 'adds_type_id' => 4,
-                'value' => '/assets/images/room2/2.jpg'
+                'value' => '/assets/images/rooms/vivaldi/room2/2.jpg'
             ],
             [
                 'room_id' => 2,
                 'adds_type_id' => 4,
-                'value' => '/assets/images/room2/3.jpg'
+                'value' => '/assets/images/rooms/vivaldi/room2/3.jpg'
             ],
             [
                 'room_id' => 2,
                 'adds_type_id' => 4,
-                'value' => '/assets/images/room2/4.jpg'
+                'value' => '/assets/images/rooms/vivaldi/room2/4.jpg'
             ],
             [
                 'room_id' => 2,
                 'adds_type_id' => 4,
-                'value' => '/assets/images/room2/5.jpg'
+                'value' => '/assets/images/rooms/vivaldi/room2/5.jpg'
             ],
             [
                 'room_id' => 2,
                 'adds_type_id' => 4,
-                'value' => '/assets/images/room2/6.jpg'
+                'value' => '/assets/images/rooms/vivaldi/room2/6.jpg'
             ],
             [
                 'room_id' => 2,
                 'adds_type_id' => 4,
-                'value' => '/assets/images/room2/7.jpg'
+                'value' => '/assets/images/rooms/vivaldi/room2/7.jpg'
             ],
             [
                 'room_id' => 2,
                 'adds_type_id' => 4,
-                'value' => '/assets/images/room2/8.jpg'
+                'value' => '/assets/images/rooms/vivaldi/room2/8.jpg'
             ],
             [
                 'room_id' => 2,
                 'adds_type_id' => 4,
-                'value' => '/assets/images/room2/9.jpg'
+                'value' => '/assets/images/rooms/vivaldi/room2/9.jpg'
             ],
 
             [
                 'room_id' => 3,
                 'adds_type_id' => 4,
-                'value' => '/assets/images/room3/1.jpg'
+                'value' => '/assets/images/rooms/vivaldi/room3/1.jpg'
             ],
             [
                 'room_id' => 3,
                 'adds_type_id' => 4,
-                'value' => '/assets/images/room3/2.jpg'
+                'value' => '/assets/images/rooms/vivaldi/room3/2.jpg'
             ],
             [
                 'room_id' => 3,
                 'adds_type_id' => 4,
-                'value' => '/assets/images/room3/3.jpg'
+                'value' => '/assets/images/rooms/vivaldi/room3/3.jpg'
             ],
             [
                 'room_id' => 3,
                 'adds_type_id' => 4,
-                'value' => '/assets/images/room3/4.jpg'
+                'value' => '/assets/images/rooms/vivaldi/room3/4.jpg'
             ],
             [
                 'room_id' => 3,
                 'adds_type_id' => 4,
-                'value' => '/assets/images/room3/5.jpg'
+                'value' => '/assets/images/rooms/vivaldi/room3/5.jpg'
             ],
             [
                 'room_id' => 3,
                 'adds_type_id' => 4,
-                'value' => '/assets/images/room3/6.jpg'
+                'value' => '/assets/images/rooms/vivaldi/room3/6.jpg'
             ],
             [
                 'room_id' => 3,
                 'adds_type_id' => 4,
-                'value' => '/assets/images/room3/7.jpg'
+                'value' => '/assets/images/rooms/vivaldi/room3/7.jpg'
             ],
             [
                 'room_id' => 3,
                 'adds_type_id' => 4,
-                'value' => '/assets/images/room3/8.jpg'
+                'value' => '/assets/images/rooms/vivaldi/room3/8.jpg'
             ],
             [
                 'room_id' => 3,
                 'adds_type_id' => 4,
-                'value' => '/assets/images/room3/9.jpg'
+                'value' => '/assets/images/rooms/vivaldi/room3/9.jpg'
             ],
             [
                 'room_id' => 3,
                 'adds_type_id' => 4,
-                'value' => '/assets/images/room3/10.jpg'
+                'value' => '/assets/images/rooms/vivaldi/room3/10.jpg'
             ],
             [
                 'room_id' => 3,
                 'adds_type_id' => 4,
-                'value' => '/assets/images/room3/11.jpg'
+                'value' => '/assets/images/rooms/vivaldi/room3/11.jpg'
             ],
 
             [
                 'room_id' => 4,
                 'adds_type_id' => 4,
-                'value' => '/assets/images/room4/1.jpg'
+                'value' => '/assets/images/rooms/vivaldi/room4/1.jpg'
             ],
             [
                 'room_id' => 4,
                 'adds_type_id' => 4,
-                'value' => '/assets/images/room4/2.jpg'
+                'value' => '/assets/images/rooms/vivaldi/room4/2.jpg'
             ],
             [
                 'room_id' => 4,
                 'adds_type_id' => 4,
-                'value' => '/assets/images/room4/3.jpg'
+                'value' => '/assets/images/rooms/vivaldi/room4/3.jpg'
             ],
             [
                 'room_id' => 4,
                 'adds_type_id' => 4,
-                'value' => '/assets/images/room4/4.jpg'
+                'value' => '/assets/images/rooms/vivaldi/room4/4.jpg'
             ],
             [
                 'room_id' => 4,
                 'adds_type_id' => 4,
-                'value' => '/assets/images/room4/5.jpg'
+                'value' => '/assets/images/rooms/vivaldi/room4/5.jpg'
             ],
             [
                 'room_id' => 4,
                 'adds_type_id' => 4,
-                'value' => '/assets/images/room4/6.jpg'
+                'value' => '/assets/images/rooms/vivaldi/room4/6.jpg'
             ],
             [
                 'room_id' => 4,
                 'adds_type_id' => 4,
-                'value' => '/assets/images/room4/7.jpg'
+                'value' => '/assets/images/rooms/vivaldi/room4/7.jpg'
             ],
 
             [
                 'room_id' => 5,
                 'adds_type_id' => 4,
-                'value' => '/assets/images/room5/1.jpg'
+                'value' => '/assets/images/rooms/vivaldi/room5/1.jpg'
             ],
             [
                 'room_id' => 5,
                 'adds_type_id' => 4,
-                'value' => '/assets/images/room5/2.jpg'
+                'value' => '/assets/images/rooms/vivaldi/room5/2.jpg'
             ],
             [
                 'room_id' => 5,
                 'adds_type_id' => 4,
-                'value' => '/assets/images/room5/3.jpg'
+                'value' => '/assets/images/rooms/vivaldi/room5/3.jpg'
             ],
             [
                 'room_id' => 5,
                 'adds_type_id' => 4,
-                'value' => '/assets/images/room5/4.jpg'
+                'value' => '/assets/images/rooms/vivaldi/room5/4.jpg'
             ],
             [
                 'room_id' => 5,
                 'adds_type_id' => 4,
-                'value' => '/assets/images/room5/5.jpg'
+                'value' => '/assets/images/rooms/vivaldi/room5/5.jpg'
             ],
             [
                 'room_id' => 5,
                 'adds_type_id' => 4,
-                'value' => '/assets/images/room5/6.jpg'
+                'value' => '/assets/images/rooms/vivaldi/room5/6.jpg'
             ],
             [
                 'room_id' => 5,
                 'adds_type_id' => 4,
-                'value' => '/assets/images/room5/7.jpg'
+                'value' => '/assets/images/rooms/vivaldi/room5/7.jpg'
             ],
             [
                 'room_id' => 5,
                 'adds_type_id' => 4,
-                'value' => '/assets/images/room5/8.jpg'
+                'value' => '/assets/images/rooms/vivaldi/room5/8.jpg'
             ],
             [
                 'room_id' => 5,
                 'adds_type_id' => 4,
-                'value' => '/assets/images/room5/9.jpg'
+                'value' => '/assets/images/rooms/vivaldi/room5/9.jpg'
             ],
             [
                 'room_id' => 5,
                 'adds_type_id' => 4,
-                'value' => '/assets/images/room5/10.jpg'
+                'value' => '/assets/images/rooms/vivaldi/room5/10.jpg'
             ],
             [
                 'room_id' => 5,
                 'adds_type_id' => 4,
-                'value' => '/assets/images/room5/11.jpg'
+                'value' => '/assets/images/rooms/vivaldi/room5/11.jpg'
             ],
         ];
 
