@@ -41,6 +41,7 @@ class LocationController
 
             $locationArr[] = [
                 'id' => $locationItem['id'],
+                'name' => $locationItem['name'],
                 'coordinates' => $locationItem['coordinates'],
                 'img' => $locationItem['img'],
                 'county' => $locationItem['county'],
