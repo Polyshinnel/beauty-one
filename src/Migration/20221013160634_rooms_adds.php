@@ -448,12 +448,12 @@ final class RoomsAdds extends Migration
             [
                 'room_id' => 1,
                 'adds_type_id' => 4,
-                'value' => '/assets/images/rooms/vivaldi/rooms/vivaldi/room1/1.jpg'
+                'value' => '/assets/images/rooms/vivaldi/room1/1.jpg'
             ],
             [
                 'room_id' => 1,
                 'adds_type_id' => 4,
-                'value' => '/assets/images/rooms/vivaldi/rooms/vivaldi/room1/2.jpg'
+                'value' => '/assets/images/rooms/vivaldi/room1/2.jpg'
             ],
             [
                 'room_id' => 1,
