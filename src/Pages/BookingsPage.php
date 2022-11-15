@@ -26,7 +26,7 @@ class BookingsPage
 
     public function get(ServerRequestInterface $request, ResponseInterface $response,array $args): ResponseInterface {
         $seatId = $args['id'];
-        $bookings = $this->bookingController->getAllBookingsSeat($seatId);
+        $bookings['booking'] = $this->bookingController->getAllBookingsSeat($seatId);
 
         $json = json_encode($bookings,JSON_UNESCAPED_UNICODE);
 
@@ -43,7 +43,6 @@ class BookingsPage
         $dateStart = $params['date_start'];
         $minutes = $params['minutes'];
         $dateEnd = $this->helperController->convertTimeToDate($dateStart,$minutes);
-        print_r($dateEnd);
         $checkResult = $this->bookingController->checkBooking($seatId,$dateStart,$dateEnd);
 
         $json['answer'] = 'false';
