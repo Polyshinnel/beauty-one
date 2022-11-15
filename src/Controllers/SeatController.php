@@ -56,6 +56,7 @@ class SeatController
                 'id' => $item['id'],
                 'location_id' => $item['location_id'],
                 'seat_type' => $item['seat_type'],
+                'name' => $item['name'],
                 'tariffs' => $tariffs
             ];
         }
