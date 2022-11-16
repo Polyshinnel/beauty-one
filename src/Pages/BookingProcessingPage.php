@@ -31,11 +31,14 @@ class BookingProcessingPage
         $minutes = $params['minutes'];
         $seatId = $params['seat_id'];
         $dateEnd = $this->helperController->convertTimeToDate($dateStart,$minutes);
+        $json['answer'] = 'false';
 
         $bookingResult = $this->bookingProcessingController->bookingProcessing($token,$seatId,$dateStart,$dateEnd);
-        var_dump($bookingResult);
+        if($bookingResult) {
+            $json['answer'] = 'true';
+        }
 
-        $json = json_encode('',JSON_UNESCAPED_UNICODE);
+        $json = json_encode($json,JSON_UNESCAPED_UNICODE);
 
         return new Response(
             200,

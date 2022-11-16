@@ -54,22 +54,22 @@ class BookingController
         $resultChecking = false;
 
         //Проверяем входит ли время старта в период бронирования
-        if(($dateStartNum > $startBookingNum) && ($dateStartNum < $endBookingNum)) {
+        if(($dateStartNum >= $startBookingNum) && ($dateStartNum <= $endBookingNum)) {
             $resultChecking = true;
         }
 
         //Проверяем входит ли время конца в период бронирования
-        if(($dateEndNum > $startBookingNum) && ($dateEndNum < $endBookingNum)) {
+        if(($dateEndNum >= $startBookingNum) && ($dateEndNum <= $endBookingNum)) {
             $resultChecking = true;
         }
 
         //Проверяем входит ли начало бронирования во время будущей брони
-        if(($startBookingNum > $dateStartNum) && ($startBookingNum < $dateEndNum)) {
+        if(($startBookingNum >= $dateStartNum) && ($startBookingNum <= $dateEndNum)) {
             $resultChecking = true;
         }
 
         //Проверяем входит ли конец бронирования во время будущей брони
-        if(($endBookingNum > $dateStartNum) && ($endBookingNum < $dateEndNum)) {
+        if(($endBookingNum >= $dateStartNum) && ($endBookingNum <= $dateEndNum)) {
             $resultChecking = true;
         }
 

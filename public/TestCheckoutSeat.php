@@ -4,7 +4,7 @@ $urlrest = 'http://beauty-one.web/checkoutSeat';
 
 $data = array(
     'seat_id' => '1',
-    'time_start' => '2022-11-02 17:00:00',
+    'time_start' => '2022-11-02 18:00:00',
     'minutes' => '210',
     'token' => '',
 );

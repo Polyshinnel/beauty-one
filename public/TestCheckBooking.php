@@ -5,7 +5,7 @@ $urlrest = 'http://beauty-one.web/checkBooking';
 $data = array(
     'seat_id' => '1',
     'date_start' => '2022-11-02 17:00:00',
-    'minutes' => '180',
+    'minutes' => '210',
 );
 
 $ch = curl_init($urlrest);

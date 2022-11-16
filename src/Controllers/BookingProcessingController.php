@@ -51,6 +51,7 @@ class BookingProcessingController
         $locationId = $seatData['location_id'];
         $seatType = $seatData['seat_type'];
 
+
         //Проверяем бронь
         $resultChecking = $this->checkBookingController->checkBooking($seatId,$dateStart,$dateEnd);
         //Проверяем есть ли пользователь с таким токеном
@@ -62,6 +63,7 @@ class BookingProcessingController
             $this->createOrder($userId,$transactionId,$calculateTariff);
             $this->createBooking($userId,$seatId,$dateStart,$dateEnd);
             $this->createOrderDetails($calculateTariff);
+            return true;
         } else {
             return false;
         }
