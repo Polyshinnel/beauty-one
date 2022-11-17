@@ -4,15 +4,18 @@
 namespace App\Controllers;
 
 
+use App\Repository\UserDeatailRepository;
 use App\Repository\UserRepository;
 
 class AuthController
 {
     private $userRepository;
+    private $userDetailRepository;
 
-    public function __construct(UserRepository $userRepository)
+    public function __construct(UserRepository $userRepository,UserDeatailRepository $userDetailRepository)
     {
         $this->userRepository = $userRepository;
+        $this->userDetailRepository = $userDetailRepository;
     }
 
     public function authUser($userId) {
@@ -45,6 +48,28 @@ class AuthController
 
             if(empty($checkIssetUser)){
                 $this->userRepository->createUser($createArr);
+                $userData = $this->userRepository->getFilteredUser($filter);
+                $id = $userData[0]['id'];
+                $createArr = [];
+                if($type == 'mail') {
+                    $createArr = [
+                        'user_id' => $id,
+                        'name' => '',
+                        'phone' => '',
+                        'mail' => $userId
+                    ];
+                }
+
+                if($type == 'phone') {
+                    $createArr = [
+                        'user_id' => $id,
+                        'name' => '',
+                        'phone' => $userId,
+                        'mail' => ''
+                    ];
+                }
+
+                $this->userDetailRepository->createUserDetail($createArr);
             }
             else
             {

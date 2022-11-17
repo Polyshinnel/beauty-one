@@ -8,6 +8,7 @@ use App\Pages\IndexPage;
 use App\Pages\LocationPage;
 use App\Pages\RoomPage;
 use App\Pages\RoomPageAdds;
+use App\Pages\UserPage;
 use Slim\App;
 use Slim\Routing\RouteCollectorProxy;
 
@@ -21,6 +22,7 @@ return static function (App $app): void {
         $group->get('getRoomProp/{id}',[RoomPageAdds::class,'get']);
     });
     $app->post('/getToken',[AuthPage::class,'createToken']);
+    $app->post('/updateUser',[UserPage::class,'get']);
     $app->post('/checkToken',[AuthPage::class,'checkToken']);
     $app->post('/checkBooking',[BookingsPage::class,'checkBooking']);
     $app->post('/checkoutSeat',[CheckoutSeatPage::class,'get']);

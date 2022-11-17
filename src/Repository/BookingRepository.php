@@ -24,8 +24,17 @@ class BookingRepository
     }
 
     public function getAllBookingsSeat($seatId) {
-        return $this->bookingModel
-            ->where('seat_id',$seatId)
+        return $this->bookingModel::select(
+            'user_details.name',
+             'bookings.id',
+             'bookings.user_id',
+             'bookings.seat_id',
+             'bookings.order_id',
+             'bookings.time_start',
+             'bookings.time_end'
+        )
+            ->leftjoin('user_details','bookings.user_id','=','user_details.user_id')
+            ->where('bookings.seat_id',$seatId)
             ->get()
             ->toArray();
     }

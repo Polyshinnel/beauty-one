@@ -38,4 +38,31 @@ class HelperController
         return $normalize_unique_id;
 
     }
+
+    public function validateMail($mail) {
+        $validateMail = preg_match('/[\.a-z0-9_\-]+[@][a-z0-9_\-]+([.][a-z0-9_\-]+)+[a-z]{1,4}/i', $mail);
+        if($validateMail) {
+            return true;
+        }
+        return false;
+    }
+
+    public function validatePhone($phone) {
+        $validatePhone = preg_replace('/[^0-9]/', '', $phone);
+        $validatePhone = mb_substr($validatePhone,1);
+        $validatePhone = '+7'.$validatePhone;
+        if(mb_strlen($validatePhone) == 12){
+            return true;
+        }
+        return false;
+    }
+
+    public function validateName($name) {
+        $strLen = mb_strlen($name);
+        if($strLen < 2) {
+            return false;
+        }
+
+        return true;
+    }
 }
