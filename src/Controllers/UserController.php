@@ -61,4 +61,8 @@ class UserController
 
         return $response;
     }
+
+    public function getUserByToken($token) {
+        return $this->userDetailRepository->getUserDetailByToken($token);
+    }
 }

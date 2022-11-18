@@ -39,4 +39,18 @@ class UserPage
             (new StreamFactory())->createStream($json)
         );
     }
+
+    public function getUserByToken(ServerRequestInterface $request, ResponseInterface $response): ResponseInterface {
+        $params = $request->getQueryParams();
+        $token = $params['token'];
+
+        $json = $this->userController->getUserByToken($token);
+        $json = json_encode($json[0],JSON_UNESCAPED_UNICODE);
+
+        return new Response(
+            200,
+            new Headers(['Content-Type' => 'text/html']),
+            (new StreamFactory())->createStream($json)
+        );
+    }
 }
