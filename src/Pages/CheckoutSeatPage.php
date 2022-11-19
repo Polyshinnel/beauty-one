@@ -26,7 +26,7 @@ class CheckoutSeatPage
     public function get(ServerRequestInterface $request, ResponseInterface $response): ResponseInterface {
         $params = $request->getParsedBody();
         $token = $params['token'];
-        $timeStart = $params['time_start'];
+        $timeStart = $params['date_start'];
         $minutes = $params['minutes'];
         $seatId = $params['seat_id'];
         $timeEnd = $this->helperController->convertTimeToDate($timeStart,$minutes);
