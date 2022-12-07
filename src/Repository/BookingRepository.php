@@ -65,6 +65,7 @@ class BookingRepository
             ->leftjoin('users','bookings.user_id','=','users.id')
             ->leftjoin('booking_status','bookings.booking_status','=','booking_status.id')
             ->where('users.token',$token)
+            ->orderBy('bookings.id','DESC')
             ->get()
             ->toArray();
     }
