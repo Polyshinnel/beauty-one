@@ -71,9 +71,17 @@ class BookingsPage
         } else {
             $token = $params['token'];
             $bookings = $this->bookingController->getBookingsByToken($token);
-            $json = [
-                'bookings' => $bookings
-            ];
+            if(empty($bookings)){
+                $json = [
+                    'error' => 'empty bookings'
+                ];
+            } else {
+                $json = [
+                    'bookings' => $bookings,
+                    'error' => 'no'
+                ];
+            }
+
             $json = json_encode($json,JSON_UNESCAPED_UNICODE);
         }
 

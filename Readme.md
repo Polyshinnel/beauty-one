@@ -559,7 +559,8 @@ php bin/console.php Название комманды
       "status_name": "Не оплачено",
       "status_color": "7896E2"
     }
-  ]
+  ],
+  "error": "no"
 }
 ```
 
@@ -568,5 +569,11 @@ php bin/console.php Название комманды
 ```json
 {
   "error": "token is empty"
+}
+```
+При отсутствии броней:
+```json
+{
+  "error": "empty bookings"
 }
 ```

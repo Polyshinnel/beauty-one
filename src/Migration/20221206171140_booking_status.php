@@ -16,7 +16,7 @@ final class BookingStatus extends Migration
             $statusList = [
                 [
                     'name' => 'Не оплачено',
-                    'color' => '7896E2'
+                    'color' => 'E93434'
                 ],
                 [
                     'name' => 'Активно',
