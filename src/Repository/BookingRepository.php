@@ -49,6 +49,7 @@ class BookingRepository
 
     public function getBookingByToken($token) {
         return $this->bookingModel::select(
+            'bookings.id',
             'bookings.booking_status',
             'bookings.time_start',
             'bookings.time_end',

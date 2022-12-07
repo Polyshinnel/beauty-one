@@ -527,6 +527,7 @@ php bin/console.php Название комманды
 {
   "bookings": [
     {
+      "id": 6,
       "booking_status": 1,
       "time_start": "2022-11-02 17:00:00",
       "time_end": "2022-11-02 20:30:00",
@@ -538,6 +539,7 @@ php bin/console.php Название комманды
       "status_color": "7896E2"
     },
     {
+      "id": 7,
       "booking_status": 2,
       "time_start": "2022-11-02 12:00:00",
       "time_end": "2022-11-02 15:30:00",
@@ -549,6 +551,7 @@ php bin/console.php Название комманды
       "status_color": "55DF49"
     },
     {
+      "id": 8,
       "booking_status": 1,
       "time_start": "2022-11-02 14:00:00",
       "time_end": "2022-11-02 17:30:00",
