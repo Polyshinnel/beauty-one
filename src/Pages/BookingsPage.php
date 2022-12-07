@@ -60,5 +60,30 @@ class BookingsPage
         );
     }
 
+    public function getActiveBookingByToken(ServerRequestInterface $request, ResponseInterface $response): ResponseInterface {
+        $params = $request->getQueryParams();
+
+        if(empty($params['token'])) {
+            $errArr = [
+                'error' => 'token is empty'
+            ];
+            $json = json_encode($errArr,JSON_UNESCAPED_UNICODE);
+        } else {
+            $token = $params['token'];
+            $bookings = $this->bookingController->getBookingsByToken($token);
+            $json = [
+                'bookings' => $bookings
+            ];
+            $json = json_encode($json,JSON_UNESCAPED_UNICODE);
+        }
+
+
+
+        return new Response(
+            200,
+            new Headers(['Content-Type' => 'text/html']),
+            (new StreamFactory())->createStream($json)
+        );
+    }
 
 }

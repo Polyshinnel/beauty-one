@@ -15,6 +15,7 @@ class Booking extends Model
         'user_id',
         'seat_id',
         'order_id',
+        'booking_status',
         'time_start',
         'time_end'
     ];

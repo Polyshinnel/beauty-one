@@ -114,6 +114,7 @@ class BookingProcessingController
             'user_id' => $userId,
             'seat_id' => $seatId,
             'order_id' => $orderId,
+            'booking_status' => 1,
             'time_start' => $timeStart,
             'time_end' => $timeEnd
         ];

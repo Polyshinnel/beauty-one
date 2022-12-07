@@ -506,6 +506,67 @@ php bin/console.php Название комманды
 При успешном бронировании
 ```json
 {
-  "answer": "false"
+  "answer": "true"
+}
+```
+
+
+### Список броней заданного пользователя
+
+Адрес: /bookingList?token=token
+
+Параметры:
+
+1. token - токен пользователя
+
+Описание: список броней пользователя
+
+Ответ:
+
+```json
+{
+  "bookings": [
+    {
+      "booking_status": 1,
+      "time_start": "2022-11-02 17:00:00",
+      "time_end": "2022-11-02 20:30:00",
+      "seat_name": "Место 1",
+      "room_name": "Кабинет №1",
+      "short": "Для косметолога, визажиста, бровиста",
+      "room_img": "/assets/images/rooms/vivaldi/preview/room1.jpg",
+      "status_name": "Не оплачено",
+      "status_color": "7896E2"
+    },
+    {
+      "booking_status": 2,
+      "time_start": "2022-11-02 12:00:00",
+      "time_end": "2022-11-02 15:30:00",
+      "seat_name": "Место 1",
+      "room_name": "Кабинет №1",
+      "short": "Для косметолога, визажиста, бровиста",
+      "room_img": "/assets/images/rooms/vivaldi/preview/room1.jpg",
+      "status_name": "Активно",
+      "status_color": "55DF49"
+    },
+    {
+      "booking_status": 1,
+      "time_start": "2022-11-02 14:00:00",
+      "time_end": "2022-11-02 17:30:00",
+      "seat_name": "Место 1",
+      "room_name": "Кабинет №3",
+      "short": "Для барбера, стилиста",
+      "room_img": "/assets/images/rooms/vivaldi/preview/room3.jpg",
+      "status_name": "Не оплачено",
+      "status_color": "7896E2"
+    }
+  ]
+}
+```
+
+При ошибке токена:
+
+```json
+{
+  "error": "token is empty"
 }
 ```

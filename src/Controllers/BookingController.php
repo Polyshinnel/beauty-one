@@ -80,5 +80,8 @@ class BookingController
         return $this->bookingRepository->getAllBookingsSeat($seatId);
     }
 
+    public function getBookingsByToken($token) {
+        return $this->bookingRepository->getBookingByToken($token);
+    }
 
 }

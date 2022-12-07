@@ -12,6 +12,7 @@ final class Bookings extends Migration
             $table->integer('user_id');
             $table->integer('seat_id');
             $table->integer('order_id');
+            $table->integer('booking_status');
             $table->dateTime('time_start');
             $table->dateTime('time_end');
         });

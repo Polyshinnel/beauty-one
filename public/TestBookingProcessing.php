@@ -3,8 +3,8 @@
 $urlrest = 'http://beauty-one.web/bookingProcessing';
 
 $data = array(
-    'seat_id' => '1',
-    'date_start' => '2022-11-02 17:00:00',
+    'seat_id' => '3',
+    'date_start' => '2022-11-02 14:00:00',
     'minutes' => '210',
     'token' => '1111-1111-1111-1111',
 );
