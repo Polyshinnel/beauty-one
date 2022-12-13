@@ -12,26 +12,26 @@ final class BookingStatus extends Migration
             $table->increments('id');
             $table->string('name',256);
             $table->string('color_hex',256);
-
-            $statusList = [
-                [
-                    'name' => 'Не оплачено',
-                    'color' => 'E93434'
-                ],
-                [
-                    'name' => 'Активно',
-                    'color' => '55DF49'
-                ],
-                [
-                    'name' => 'Истекло',
-                    'color' => '7896E2'
-                ],
-            ];
-
-            foreach ($statusList as $statusItem){
-                Capsule::table('booking_status')->insert($statusItem);
-            }
         });
+
+        $statusList = [
+            [
+                'name' => 'Не оплачено',
+                'color_hex' => 'E93434'
+            ],
+            [
+                'name' => 'Активно',
+                'color_hex' => '55DF49'
+            ],
+            [
+                'name' => 'Истекло',
+                'color_hex' => '7896E2'
+            ],
+        ];
+
+        foreach ($statusList as $statusItem){
+            Capsule::table('booking_status')->insert($statusItem);
+        }
     }
 
     public function down()

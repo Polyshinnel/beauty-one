@@ -80,8 +80,28 @@ class BookingController
         return $this->bookingRepository->getAllBookingsSeat($seatId);
     }
 
-    public function getBookingsByToken($token) {
-        return $this->bookingRepository->getBookingByToken($token);
+    public function getCurrentBookingsByToken($token) {
+        $bookings = $this->bookingRepository->getBookingByToken($token);
+        $bookingArr = [];
+        foreach ($bookings as $booking) {
+            if(($booking['booking_status'] != 3) && ($booking['booking_status'] != 4)) {
+                $bookingArr[] = $booking;
+            }
+        }
+
+        return $bookingArr;
+    }
+
+    public function getHistoryBookingsByToken($token) {
+        $bookings = $this->bookingRepository->getBookingByToken($token);
+        $bookingArr = [];
+        foreach ($bookings as $booking) {
+            if(($booking['booking_status'] != 1) && ($booking['booking_status'] != 2)) {
+                $bookingArr[] = $booking;
+            }
+        }
+
+        return $bookingArr;
     }
 
 }

@@ -22,6 +22,7 @@ return static function (App $app): void {
         $group->get('getListRooms/{id}',[RoomPage::class,'get']);
         $group->get('getRoomProp/{id}',[RoomPageAdds::class,'get']);
         $group->get('bookingList',[BookingsPage::class,'getActiveBookingByToken']);
+        $group->get('bookingHistory',[BookingsPage::class,'getHistoryBookingByToken']);
     });
     $app->post('/getToken',[AuthPage::class,'createToken']);
     $app->post('/updateUser',[UserPage::class,'get']);
