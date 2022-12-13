@@ -4,9 +4,9 @@ $urlrest = 'http://beauty-one.web/bookingProcessing';
 
 $data = array(
     'seat_id' => '3',
-    'date_start' => '2022-11-02 14:00:00',
+    'date_start' => '2022-12-13 16:30:00',
     'minutes' => '210',
-    'token' => '1111-1111-1111-1111',
+    'token' => '1812A12C-5986-4741-AACF-97843406729C',
 );
 
 $ch = curl_init($urlrest);

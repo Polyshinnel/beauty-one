@@ -34,6 +34,7 @@ class BookingRepository
              'bookings.time_end'
         )
             ->leftjoin('user_details','bookings.user_id','=','user_details.user_id')
+            ->where('bookings.booking_status','!=',4)
             ->where('bookings.seat_id',$seatId)
             ->get()
             ->toArray();
@@ -68,5 +69,34 @@ class BookingRepository
             ->orderBy('bookings.id','DESC')
             ->get()
             ->toArray();
+    }
+
+    public function getBookingByStatus() {
+        return $this->bookingModel
+            ->where('booking_status',1)
+            ->orWhere('booking_status',2)
+            ->get()
+            ->toArray();
+    }
+
+    public function getBookingsOrder($id) {
+        return $this->bookingModel::select(
+            'bookings.id',
+            'bookings.booking_status',
+            'bookings.time_start',
+            'bookings.time_end',
+            'orders.date_create'
+        )
+            ->leftjoin('order_details','bookings.id','=','order_details.booking_id')
+            ->leftjoin('orders','order_details.order_id','=','orders.id')
+            ->where('bookings.id',$id)
+            ->get()
+            ->toArray();
+    }
+
+    public function updateBooking($id,$updateArr) {
+        $this->bookingModel
+            ->where('id',$id)
+            ->update($updateArr);
     }
 }

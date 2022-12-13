@@ -1,11 +1,11 @@
 <?php
 
-use App\Jobs\TestJob;
+use App\Jobs\CheckBookings;
 
 return [
     'console' => [
         'commands' => [
-            'Название комманды' => TestJob::class,
+            'CheckExpiredBooking' => CheckBookings::class,
         ]
     ]
 ];
