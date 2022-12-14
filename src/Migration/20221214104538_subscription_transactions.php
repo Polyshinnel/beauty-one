@@ -4,7 +4,7 @@ declare(strict_types=1);
 use \App\Migration\Migration;
 use Illuminate\Database\Schema\Blueprint;
 
-final class UserTransactions extends Migration
+final class SubscriptionTransactions extends Migration
 {
     public function up() {
         $this->schema->create('user_transactions',function (Blueprint $table) {

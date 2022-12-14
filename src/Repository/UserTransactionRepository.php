@@ -14,4 +14,8 @@ class UserTransactionRepository
     {
         $this->userTransactionModel = $userTransactionModel;
     }
+
+    public function createTransaction($createArr) {
+        $this->userTransactionModel::create($createArr);
+    }
 }

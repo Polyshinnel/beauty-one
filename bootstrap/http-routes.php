@@ -25,6 +25,7 @@ return static function (App $app): void {
         $group->get('bookingList',[BookingsPage::class,'getActiveBookingByToken']);
         $group->get('bookingHistory',[BookingsPage::class,'getHistoryBookingByToken']);
         $group->get('getBookingProp/{id}',[BookingsPage::class,'getBookingById']);
+        $group->get('shopBooking',[BookingsPage::class,'shopBooking']);
         $group->get('subscriptionList',[SubscriptionList::class,'get']);
     });
     $app->post('/getToken',[AuthPage::class,'createToken']);

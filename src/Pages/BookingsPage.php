@@ -6,6 +6,7 @@ namespace App\Pages;
 
 use App\Controllers\BookingController;
 use App\Controllers\HelperController;
+use App\Controllers\ShopBookingController;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
 use Slim\Psr7\Factory\StreamFactory;
@@ -16,11 +17,13 @@ class BookingsPage
 {
     private $bookingController;
     private $helperController;
+    private $bookingShopController;
 
-    public function __construct(BookingController $bookingController,HelperController $helperController)
+    public function __construct(BookingController $bookingController,HelperController $helperController,ShopBookingController $bookingShopController)
     {
         $this->bookingController = $bookingController;
         $this->helperController = $helperController;
+        $this->bookingShopController = $bookingShopController;
     }
 
 
@@ -140,4 +143,24 @@ class BookingsPage
             (new StreamFactory())->createStream($json)
         );
     }
+
+    public function shopBooking(ServerRequestInterface $request, ResponseInterface $response,array $args): ResponseInterface {
+
+        $params = $request->getQueryParams();
+        $bookingId = $params['booking_id'];
+        $this->bookingShopController->createShopByMoney($bookingId);
+
+
+        $json = json_encode('',JSON_UNESCAPED_UNICODE);
+
+        return new Response(
+            200,
+            new Headers(['Content-Type' => 'text/html']),
+            (new StreamFactory())->createStream($json)
+        );
+    }
+
+
+
+
 }

@@ -85,7 +85,11 @@ class BookingRepository
             'bookings.booking_status',
             'bookings.time_start',
             'bookings.time_end',
-            'orders.date_create'
+            'orders.date_create',
+            'orders.id as order_id',
+            'orders.transaction_id',
+            'orders.user_id',
+            'orders.order_total_money'
         )
             ->leftjoin('order_details','bookings.id','=','order_details.booking_id')
             ->leftjoin('orders','order_details.order_id','=','orders.id')

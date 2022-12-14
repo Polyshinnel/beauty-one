@@ -22,4 +22,8 @@ class OrderRepository
     public function createOrder(array $createArr) : void {
         $this->orderModel::create($createArr);
     }
+
+    public function updateOrder($orderId,$updateArr) {
+        $this->orderModel->where('id',$orderId)->update($updateArr);
+    }
 }
