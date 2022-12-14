@@ -128,4 +128,16 @@ class BookingsPage
         );
     }
 
+    public function getBookingById(ServerRequestInterface $request, ResponseInterface $response,array $args): ResponseInterface {
+        $bookingId = $args['id'];
+        $booking = $this->bookingController->getBookingById($bookingId);
+
+        $json = json_encode($booking[0],JSON_UNESCAPED_UNICODE);
+
+        return new Response(
+            200,
+            new Headers(['Content-Type' => 'text/html']),
+            (new StreamFactory())->createStream($json)
+        );
+    }
 }

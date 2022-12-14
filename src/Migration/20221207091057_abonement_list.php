@@ -12,7 +12,6 @@ final class AbonementList extends Migration
             $table->increments('id');
             $table->string('name',256);
             $table->integer('price');
-            $table->integer('hours');
             $table->integer('minutes');
         });
 
@@ -20,25 +19,21 @@ final class AbonementList extends Migration
             [
                 'name' => '15 часов',
                 'price' => 4500,
-                'hours' => 15,
                 'minutes' => 900
             ],
             [
                 'name' => '30 часов',
                 'price' => 7500,
-                'hours' => 30,
                 'minutes' => 1800
             ],
             [
                 'name' => '50 часов',
                 'price' => 9900,
-                'hours' => 50,
                 'minutes' => 3000
             ],
             [
                 'name' => '100 часов',
                 'price' => 14990,
-                'hours' => 100,
                 'minutes' => 6000
             ],
         ];

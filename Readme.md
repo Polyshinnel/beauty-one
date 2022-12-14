@@ -19,9 +19,15 @@ https://siipo.la/blog/how-to-use-eloquent-orm-migrations-outside-laravel
 
 ## Консольные комманды
 
-##### Запуск парсеров:
+##### Запуск проверки броней:
 
-php bin/console.php Название комманды
+Описание: проверяет брони в статусе: ожидает оплаты, 
+если на момент запуска прошло более 15 минут, переносит в статус 
+"Отменено". Далее идет проверка броней в статусе "Активно". Если 
+время окончания раньше чем идет запуск скрипта то меняется статус на
+"Завершено".
+
+php bin/console.php bookings:CheckBooking
 
 
 
@@ -511,7 +517,7 @@ php bin/console.php Название комманды
 ```
 
 
-### Список броней заданного пользователя
+### Список активных броней заданного пользователя
 
 Адрес: /bookingList?token=token
 
@@ -519,7 +525,7 @@ php bin/console.php Название комманды
 
 1. token - токен пользователя
 
-Описание: список броней пользователя
+Описание: список активных броней пользователя
 
 Ответ:
 
@@ -578,5 +584,104 @@ php bin/console.php Название комманды
 ```json
 {
   "error": "empty bookings"
+}
+```
+
+
+### Список истории броней заданного пользователя
+
+Адрес: /bookingList?token=token
+
+Параметры:
+
+1. token - токен пользователя
+
+Описание: список активных броней пользователя
+
+Ответ:
+
+```json
+{
+  "bookings": [
+    {
+      "id": 6,
+      "booking_status": 1,
+      "time_start": "2022-11-02 17:00:00",
+      "time_end": "2022-11-02 20:30:00",
+      "seat_name": "Место 1",
+      "room_name": "Кабинет №1",
+      "short": "Для косметолога, визажиста, бровиста",
+      "room_img": "/assets/images/rooms/vivaldi/preview/room1.jpg",
+      "status_name": "Не оплачено",
+      "status_color": "7896E2"
+    },
+    {
+      "id": 7,
+      "booking_status": 2,
+      "time_start": "2022-11-02 12:00:00",
+      "time_end": "2022-11-02 15:30:00",
+      "seat_name": "Место 1",
+      "room_name": "Кабинет №1",
+      "short": "Для косметолога, визажиста, бровиста",
+      "room_img": "/assets/images/rooms/vivaldi/preview/room1.jpg",
+      "status_name": "Активно",
+      "status_color": "55DF49"
+    },
+    {
+      "id": 8,
+      "booking_status": 1,
+      "time_start": "2022-11-02 14:00:00",
+      "time_end": "2022-11-02 17:30:00",
+      "seat_name": "Место 1",
+      "room_name": "Кабинет №3",
+      "short": "Для барбера, стилиста",
+      "room_img": "/assets/images/rooms/vivaldi/preview/room3.jpg",
+      "status_name": "Не оплачено",
+      "status_color": "7896E2"
+    }
+  ],
+  "error": "no"
+}
+```
+
+При ошибке токена:
+
+```json
+{
+  "error": "token is empty"
+}
+```
+При отсутствии броней:
+```json
+{
+  "error": "empty bookings"
+}
+```
+
+### Получение данных по текущей броне
+
+Адрес: /getBookingProp/{id}
+
+Параметры:
+
+1. id - идентификатор бронирования 
+
+Описание: Получение данных по бронированию
+
+Ответ:
+
+```json
+{
+  "id": 1,
+  "booking_status": 1,
+  "time_start": "2022-12-13 16:30:00",
+  "time_end": "2022-12-13 20:00:00",
+  "seat_name": "Место 1",
+  "room_name": "Кабинет №3",
+  "short": "Для барбера, стилиста",
+  "room_img": "/assets/images/rooms/vivaldi/preview/room3_big.jpg",
+  "status_name": "Не оплачено",
+  "status_color": "E93434",
+  "money_value": 1225
 }
 ```

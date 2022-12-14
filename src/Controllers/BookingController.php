@@ -104,4 +104,8 @@ class BookingController
         return $bookingArr;
     }
 
+    public function getBookingById($id) {
+        return $this->bookingRepository->getBookingById($id);
+    }
+
 }

@@ -15,7 +15,6 @@ final class AbonementUser extends Migration
             $table->integer('current_time');
             $table->date('date_start');
             $table->date('date_end');
-            $table->integer('available');
         });
     }
 

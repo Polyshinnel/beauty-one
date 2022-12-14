@@ -17,6 +17,5 @@ class SubscriptionUser extends Model
         'current_time',
         'date_start',
         'date_end',
-        'available'
     ];
 }

@@ -99,4 +99,29 @@ class BookingRepository
             ->where('id',$id)
             ->update($updateArr);
     }
+
+    public function getBookingById($bookingId) {
+        return $this->bookingModel::select(
+            'bookings.id',
+            'bookings.booking_status',
+            'bookings.time_start',
+            'bookings.time_end',
+            'seats.name as seat_name',
+            'rooms.name as room_name',
+            'rooms.short',
+            'rooms.img_big as room_img',
+            'booking_status.name as status_name',
+            'booking_status.color_hex as status_color',
+            'order_details.money_value'
+        )
+            ->leftjoin('seats','bookings.seat_id','=','seats.id')
+            ->leftjoin('rooms','seats.room_id','=','rooms.id')
+            ->leftjoin('users','bookings.user_id','=','users.id')
+            ->leftjoin('booking_status','bookings.booking_status','=','booking_status.id')
+            ->leftjoin('order_details','bookings.id','=','order_details.booking_id')
+            ->where('bookings.id',$bookingId)
+            ->get()
+            ->toArray();
+    }
+
 }
